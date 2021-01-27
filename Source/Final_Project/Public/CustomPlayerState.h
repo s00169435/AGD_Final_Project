@@ -21,6 +21,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TArray<EKeyCardType> CollectedKeyCards;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		FString PlayerName;
+
 	void AddKeyCard(EKeyCardType keyCard);
 	bool HasKeyCard(EKeyCardType keyCard);
 };

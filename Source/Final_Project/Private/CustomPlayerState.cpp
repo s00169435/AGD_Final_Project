@@ -4,8 +4,9 @@
 #include "CustomPlayerState.h"
 #include "KeyCard.h"
 
-ACustomPlayerState::ACustomPlayerState() {
-
+ACustomPlayerState::ACustomPlayerState() 
+{
+	PlayerName = "Test";
 }
 
 void ACustomPlayerState::AddKeyCard(EKeyCardType keyCard)
