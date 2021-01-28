@@ -21,6 +21,9 @@ AKeyCard::AKeyCard()
 	SphereComp->SetGenerateOverlapEvents(true);
 	SphereComp->ShapeColor = FColor::Red;
 	SphereComp->SetupAttachment(RootComponent);
+
+	RotatingComp = CreateDefaultSubobject<URotatingMovementComponent>(TEXT("RotateMovement"));
+	RotatingComp->RotationRate = FRotator(0, 110, 0);
 }
 
 // Called when the game starts or when spawned
@@ -28,6 +31,23 @@ void AKeyCard::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	switch (CardType) {
+	case EKeyCardType::Red:
+		Color = FLinearColor::Red;
+		break;
+
+	case EKeyCardType::Green:
+		Color = FLinearColor::Green;
+		break;
+
+	case EKeyCardType::Blue:
+		Color = FLinearColor::Blue;
+		break;
+
+	default:
+		Color = FLinearColor::Yellow;
+		break;
+	}
 }
 
 // Called every frame

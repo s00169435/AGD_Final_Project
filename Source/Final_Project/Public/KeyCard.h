@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameFramework/RotatingMovementComponent.h"
 #include "GameFramework/Actor.h"
 #include "KeyCard.generated.h"
 
@@ -23,10 +24,14 @@ public:
 	// Sets default values for this actor's properties
 	AKeyCard();
 
+
+	UPROPERTY(EditAnywhere)
+		URotatingMovementComponent* RotatingComp;
+
 	UPROPERTY(EditAnywhere)
 		USceneComponent* SceneComp;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		UStaticMeshComponent* StaticMeshComp;
 
 	UPROPERTY(EditAnywhere)
