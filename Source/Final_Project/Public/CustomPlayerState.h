@@ -24,6 +24,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		FString PlayerName;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float Time;
+
 	void AddKeyCard(EKeyCardType keyCard);
 	bool HasKeyCard(EKeyCardType keyCard);
+
+	UFUNCTION(BlueprintCallable)
+		void Save(float gameTime);
 };
